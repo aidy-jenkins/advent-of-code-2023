@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "noImplicitAny": false,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true,
+      "target": "ES2022",
+      "types": ["jasmine", "node"]
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules/*"],
+}
