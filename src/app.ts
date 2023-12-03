@@ -1,8 +1,10 @@
-import * as Puzzle from "./Puzzle";
+import * as Day1 from "./Day1";
 import * as fs from "fs";
 
-(async () => {
+const day1 = (async () => {
     let fileContent = await new Promise<string>((resolve, reject) => fs.readFile("inputs/day1.txt", (err, data) => err ? reject(err) : resolve(data.toString())));
     
-    console.log(Puzzle.solve(fileContent));
-})();
+    console.log(Day1.solve(fileContent));
+});
+
+day1();

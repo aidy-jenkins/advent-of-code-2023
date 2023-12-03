@@ -1,4 +1,4 @@
-import * as Puzzle from "../src/Puzzle";
+import * as Puzzle from "../src/Day1";
 
 describe("Puzzle", () => {
     describe("getFirstDigit", () => {
