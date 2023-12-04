@@ -13,7 +13,8 @@ const day1 = (async () => {
 const day2 = (async () => {
     let fileContent = await loadFile("inputs/day2.txt");
 
-    console.log(Day2.solve(fileContent, [{colour: "red", quantity: 12}, {colour: "green", quantity: 13}, {colour: "blue", quantity: 14}]));
+    console.log(`Part 1: ${Day2.solvePart1(fileContent, [{colour: "red", quantity: 12}, {colour: "green", quantity: 13}, {colour: "blue", quantity: 14}])}`);
+    console.log(`Part 2: ${Day2.solvePart2(fileContent)}`);
 });
 
 day2();

@@ -95,7 +95,7 @@ describe("Puzzle", () => {
         });
     });
 
-    describe("solve", () => {
+    describe("solvePart1", () => {
         it("should add up all the possible game IDs", () => {
             let input = `
                 Game 1: 3 red, 3 blue, 3 green; 4 red, 4 blue, 4 green
@@ -104,7 +104,7 @@ describe("Puzzle", () => {
                 Game 4: 5 red, 4 blue, 3 green; 4 red, 5 blue, 4 green
             `;
 
-            let result = Puzzle.solve(input, [{colour: "red", quantity: 5}, {colour: "blue", quantity: 4}, {colour: "green", quantity: 4}]);
+            let result = Puzzle.solvePart1(input, [{colour: "red", quantity: 5}, {colour: "blue", quantity: 4}, {colour: "green", quantity: 4}]);
 
             expect(result).toBe(1 + 3);
 
@@ -119,9 +119,25 @@ describe("Puzzle", () => {
                 Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
             `;
 
-            let result = Puzzle.solve(input, [{colour: "red", quantity: 12}, {colour: "green", quantity: 13}, {colour: "blue", quantity: 14}]);
+            let result = Puzzle.solvePart1(input, [{colour: "red", quantity: 12}, {colour: "green", quantity: 13}, {colour: "blue", quantity: 14}]);
 
             expect(result).toBe(8);
+        });
+    });
+
+    describe("solvePart2", () => {
+        it("should correctly handle the website example", () => {
+            let input = `
+                Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+                Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
+                Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+                Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
+                Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
+            `;
+
+            let result = Puzzle.solvePart2(input);
+            
+            expect(result).toBe(2286);
         });
     });
 });

@@ -45,10 +45,18 @@ export const parseGame = (line: string, rules: CubeQuantity[]) => {
    } as Game;
 };
 
-export const solve = (input: string, rules: CubeQuantity[]) => {
+export const solvePart1 = (input: string, rules: CubeQuantity[]) => {
    let lines = input.split('\n').map(x => x.trim()).filter(x => Boolean(x));
 
    let games = lines.map(line => parseGame(line, rules));
 
    return linq(games).where(game => game.possible).select(game => game.ID).sum();
+};
+
+export const solvePart2 = (input: string) => {
+   let lines = input.split('\n').map(x => x.trim()).filter(x => Boolean(x));
+
+   let games = lines.map(line => parseGame(line, []));
+
+   return linq(games).select(x => linq(x.highestCubeQuantities).aggregate(1, (agg, cq) => agg * cq.quantity)).sum();
 };
